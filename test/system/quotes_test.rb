@@ -34,18 +34,18 @@ class QuotesTest < ApplicationSystemTestCase
     click_on 'Edit', match: :first
     assert_selector 'h1', text: 'Edit Quote'
 
-    fill_in 'Name', with: 'Updated quote'
+    fill_in 'Name', with: 'Update quote'
     click_on 'Update Quote'
 
     assert_selector 'h1', text: 'Quotes'
-    assert_text 'Updated quote'
+    assert_text 'Update quote'
   end
 
   test 'Destroying a quote' do
     visit quotes_path
     assert_selector 'h1', text: 'Quotes'
 
-    click_on 'Destroy', match: :first
+    click_on 'Delete', match: :first
     assert_no_text @quote.name
   end
 end
