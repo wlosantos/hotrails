@@ -1,0 +1,9 @@
+section
+  = link_to sanitize("&larr; Back to quotes"), quote_path(@quote)
+
+  header
+    h1 Edit Quote
+
+  div
+    = turbo_frame_tag @quote do
+      = render 'form', quote: @quote
