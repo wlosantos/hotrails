@@ -10,5 +10,6 @@ html
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
 
-  body class='container mx-auto mt-10 px-4'
-    = yield
+  body class='container mx-auto mt-10 px-4 bg-gray-50 text-sm'
+    main class='mx-auto md:w-2/4'
+      = yield

@@ -1,7 +1,9 @@
 = simple_form_for quote, html: { class: 'quote form' } do |f|
   - if quote.errors.any?
-    div class='error-message'
+    div class='error-message bg-red-50 rounded-lg p-2 text-sm font-medium mb-2 items-center'
+      = heroicon 'exclamation-triangle', options: { class: 'h-4 w-4 text-red-500 inline-block mr-1 ml-2' }
       = quote.errors.full_messages.to_sentence.capitalize
-
-  = f.input :name, input_html: { autofocus: true, class: 'quote__name' }
-  = f.submit class: 'btn btn--secondary'
+  div class='flex justify-between items-center space-x-2'
+    div class='flex-1'
+      = f.input :name, label: false, input_html: { autofocus: true, class: 'w-full rounded border-gray-300 placeholder:text-gray-400 placeholder:text-sm', placeholder: 'Name of your quote ...' }
+    = f.submit class: 'btn btn--secondary'

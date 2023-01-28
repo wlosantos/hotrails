@@ -1,7 +1,7 @@
 section
-  header
+  header class='flex justify-between items-center mb-4'
     h1 Quotes
     = link_to 'New Quote', new_quote_path, class:'btn btn--primary'
 
-  div
+  div class='mt-10'
     =render @quotes
