@@ -5,4 +5,5 @@ section
     h1 Edit Quote
 
   div
-    = render 'form', quote: @quote
+    = turbo_frame_tag @quote do
+      = render 'form', quote: @quote

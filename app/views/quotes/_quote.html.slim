@@ -1,6 +1,7 @@
-div class='quote bg-white flex justify-between items-center mb-3 shadow rounded-lg p-4 border border-gray-50'
-  div class='flex-1'
-    = link_to quote.name, quote_path(quote)
-  div class='quote__actions flex space-x-2'
-    = button_to 'Delete', quote_path(quote), method: :delete, class:'btn btn--lignt inline-block'
-    = link_to 'Edit', edit_quote_path(quote), class:'btn btn--lignt'
+= turbo_frame_tag quote do
+  div class='quote flex justify-between items-center bg-white shadow rounded-lg p-4 mb-3 border border-gray-50'
+    div class='flex-1'
+      = link_to quote.name, quote_path(quote), data: { turbo_frame: '_top' }
+    div class='quote__actions flex space-x-2'
+      = button_to 'Delete', quote_path(quote), method: :delete, class:'btn btn--lignt inline-block'
+      = link_to 'Edit', edit_quote_path(quote), class:'btn btn--lignt'
