@@ -1,0 +1,10 @@
+- if user_signed_in?
+  header
+    nav class='w-full flex justify-between items-center py-4'
+      div class='items-center'
+        h2 class='text-2xl font-semibold'
+          = current_company.name
+      div class='flex items-center space-x-3'
+        span class='text-medium font-semibold text-gray-500 letter-spacing-wide'
+          | @#{ current_user.name }
+        = button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn--primary'

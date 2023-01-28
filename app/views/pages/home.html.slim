@@ -1,0 +1,10 @@
+section class='flex flex-col items-center justify-center min-h-full'
+  h1 class='text-6xl mb-2' Quote editor
+  p class='text-xl font-light' A blazing fast quote editor built with Hotwire
+
+  div class='mt-10'
+    - if user_signed_in?
+      = link_to 'View Quotes', quotes_path, class: 'btn btn--primary'
+    - else
+      = link_to 'Sign in', new_user_session_path, class: 'btn btn--primary'
+

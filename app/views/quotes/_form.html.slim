@@ -7,5 +7,10 @@ div class='bg-white shadow rounded-lg p-4 mb-3 border border-gray-50'
     div class='flex justify-between items-center space-x-2'
       div class='flex-1'
         = f.input :name, label: false, input_html: { autofocus: true, class: 'w-full rounded border-gray-300 placeholder:text-gray-400 placeholder:text-sm', placeholder: 'Name of your quote ...' }
-      = link_to 'Cancel', quotes_path, class: 'btn'
-      = f.submit class: 'btn btn--primary'
+      = link_to quotes_path, class: 'btn text-black p-2 hover:text-black' do
+        - if action_name == 'new'
+          = heroicon 'x-mark', options:{ class: 'w-5 h-5' }
+        - else
+          = heroicon 'arrow-uturn-left', options:{ class: 'w-5 h-5' }
+      = f.button :button, class: 'btn text-white bg-green-500 p-2' do
+        = heroicon 'check', options:{ class: 'w-5 h-5' }
