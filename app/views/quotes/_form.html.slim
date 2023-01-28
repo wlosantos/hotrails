@@ -7,4 +7,5 @@ div class='bg-white shadow rounded-lg p-4 mb-3 border border-gray-50'
     div class='flex justify-between items-center space-x-2'
       div class='flex-1'
         = f.input :name, label: false, input_html: { autofocus: true, class: 'w-full rounded border-gray-300 placeholder:text-gray-400 placeholder:text-sm', placeholder: 'Name of your quote ...' }
+      = link_to 'Cancel', quotes_path, class: 'btn'
       = f.submit class: 'btn btn--primary'
