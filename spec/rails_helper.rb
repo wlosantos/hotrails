@@ -4,10 +4,7 @@ require File.expand_path('../config/environment', __dir__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
-require 'database_cleaner'
-require 'webdrivers'
 require 'capybara/rspec'
-require 'simplecov'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -43,18 +40,6 @@ RSpec.configure do |config|
   config.default_formatter = 'doc'
   config.filter_run_when_matching :focus
 
-  # DATABASE_CLEANER
-  # config.before(:suite) do
-  #   DatabaseCleaner.strategy = :transaction
-  #   DatabaseCleaner.clean_with(:truncation)
-  # end
-
-  # config.around(:each) do |example|
-  #   DatabaseCleaner.cleaning do
-  #     example.run
-  #   end
-  # end
-
   # FACTORY_BOT
   config.include FactoryBot::Syntax::Methods
 
@@ -89,7 +74,6 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-
 end
 # Setting shoulda matcher =================================
 Shoulda::Matchers.configure do |configs|
@@ -98,5 +82,3 @@ Shoulda::Matchers.configure do |configs|
     with.library :rails
   end
 end
-
-SimpleCov.start
