@@ -3,5 +3,7 @@
     div class='flex-1'
       = link_to quote.name, quote_path(quote), data: { turbo_frame: '_top' }
     div class='quote__actions flex space-x-2'
-      = button_to 'Delete', quote_path(quote), method: :delete, class:'btn btn--lignt inline-block'
-      = link_to 'Edit', edit_quote_path(quote), class:'btn btn--lignt'
+      = button_to quote_path(quote), method: :delete, class:'btn text-black p-2 inline-block' do
+        = heroicon 'trash', options:{ class: 'w-5 h-5' }
+      = link_to edit_quote_path(quote), class:'btn text-black p-2 hover:text-black' do
+        = heroicon 'pencil-square', options:{ class: 'w-5 h-5' }
